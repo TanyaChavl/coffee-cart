@@ -24,7 +24,7 @@ test('payment form', async ({ page }) => {
     await page.getByRole('textbox', { name: 'Name' }).fill('Tetiana');
     await page.getByRole('textbox', { name: 'Email' }).fill('tangella144@gmail.com');
     await page.getByRole('checkbox', { name: 'Promotion checkbox' }).check();
-    expect(page.getByRole('textbox', { name: 'Name' })).toHaveValue('Tetiana');
+    await expect(page.getByRole('textbox', { name: 'Name' })).toHaveValue('Tetiana');
     await expect(page.getByRole('textbox', { name: 'Email' })).toHaveValue('tangella144@gmail.com');
     await expect(page.getByRole('checkbox', { name: 'Promotion checkbox' })).toBeChecked();
 });
@@ -38,7 +38,7 @@ test('successful payment', async ({ page }) => {
     await page.getByRole('textbox', { name: 'Name' }).fill('Tetiana');
     await page.getByRole('textbox', { name: 'Email' }).fill('tangella144@gmail.com');
     await page.getByRole('checkbox', { name: 'Promotion checkbox' }).check();
-    expect(page.getByRole('textbox', { name: 'Name' })).toHaveValue('Tetiana');
+    await expect(page.getByRole('textbox', { name: 'Name' })).toHaveValue('Tetiana');
     await expect(page.getByRole('textbox', { name: 'Email' })).toHaveValue('tangella144@gmail.com');
     await expect(page.getByRole('checkbox', { name: 'Promotion checkbox' })).toBeChecked();
     await page.getByRole('button', { name: 'Submit' }).click();
